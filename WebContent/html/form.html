@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui.form小例子</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+</head>
+<body>
+<form class="layui-form layui-form-pane">  <!--layui-form-pane--> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">输入框</label>
+            <div class="layui-input-block"> <!--块占一行-->
+                <input type="text" name="输入框1" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+         </div>
+
+        <div class="layui-inline ">  <!--内联块-->
+            <label class="layui-form-label">输入框</label>
+            <div class="layui-input-block">
+                <input type="text" name="输入框2" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入框</label>
+        <div class="layui-input-block">
+            <input type="text" name="输入框3" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">籍贯</label>
+        <div class="layui-input-block">
+            <select name="jiguan" lay-filter="jiguan" id="jiguan" lay-search="">
+                <option value="0">武汉</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item" >
+        <label class="layui-form-label">下拉选择框</label>
+        <div class="layui-input-block">
+                <select name="aihao" lay-filter="aihao" id="aihao"  lay-search="">
+                    <option value="0">写作</option>
+                    <option value="1">阅读</option>
+                </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item" pane="">
+        <label class="layui-form-label">原始复选框</label>
+        <div class="layui-input-block">
+            <input name="like1[write]" title="写作" type="checkbox" checked="" lay-skin="primary">
+            <input name="like1[read]" title="阅读" type="checkbox" lay-skin="primary">
+            <input name="like1[game]" title="游戏" disabled="" type="checkbox" lay-skin="primary">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">单选框</label>
+
+            <div class="layui-input-block">
+                <label class="layui-inline" style="margin-left: 100px">
+                    <input type="radio" name="sex" value="0" title="男">
+                </label>
+                <label class="layui-inline">
+                    <input type="radio" name="sex" value="1" title="女" checked>
+                </label>
+            </div>
+
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">请填写描述</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" lay-submit="" lay-filter="mysubmit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button type="button" class="layui-btn" lay-submit="" lay-filter="mysubmit1" id="btn">添加</button>
+        </div>
+    </div>
+    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+</form>
+<script src="../layui/layui.js"></script>
+<script language="JavaScript">
+    layui.use(['form','jquery','element'], function(){
+        var element = layui.element;
+        var $ = layui.jquery;
+        var form = layui.form;
+
+
+        //监听提交时间
+        form.on('submit(mysubmit)',function (data) { //submuit里是 lay-filter="mysubmit"
+            console.log(data.elem);
+            console.log(data.form);
+            console.log(data.field);
+            //return false；阻止表单跳转
+        })
+
+        //监听下拉框提交事件
+        form.on('select(aihao)',function (data) {
+            console.log(data.elem); //得到select原始DOM对象
+            console.log(data.value);//得到美化后的DOM
+            console.log(data.othis);
+
+        });
+
+        $("#btn").click(function () {
+            //得到select对象
+            var ah = $("#aihao");
+
+            ah.append("<option value='2'>dash</option>");
+            //渲染
+            alert(ah.html());
+            form.render();
+        });
+
+        //各种基于事件的操作，下面会有进一步介绍
+    });
+</script>
+</body>
+</html>

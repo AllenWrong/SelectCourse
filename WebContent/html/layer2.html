@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>表单元素</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body style="padding: 20px">
+<button type="button" class="layui-btn" id="fbtn1">layer.open.type=0</button>
+<button type="button" class="layui-btn" id="fbtn2">layer.open.type=1</button>
+<button type="button" class="layui-btn" id="btn3">layer.open.type=2</button>
+
+<div id="mydiv" style="display: none;padding: 10px">
+    <form class="layui-form " action="" lay-filter="dataFrm">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名:</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" lay-verify="username" autocomplete="off" placeholder="用户名"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户密码:</label>
+            <div class="layui-input-block">
+                <input type="password" name="pwd" lay-verify="pass" autocomplete="off"
+                       placeholder="用户名密码" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">用户手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="phone"  lay-verify="required|phone" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">用户邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="email" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">籍贯</label>
+            <div class="layui-input-block">
+                <select name="jiguan" lay-filter="jiguan" id="jiguan" lay-search="">
+                    <option value="武汉">武汉</option>
+                    <option value="上海">上海</option>
+                    <option value="北京">北京</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" lay-filter="sex" value="男" title="男" checked="">
+                <input type="radio" name="sex" lay-filter="sex" value="女" title="女"> <input
+                    type="radio" name="sex"  lay-filter="sex" value="禁" title="禁用" disabled="">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">爱好</label>
+            <div class="layui-input-block">
+                <input type="checkbox" lay-filter='hobby' value="写作" name="hobby" title="写作"> <input
+                    type="checkbox" lay-filter='hobby' value="阅读" name="hobby" title="阅读" > <input
+                    type="checkbox" lay-filter='hobby'  value="游戏" name="hobby" title="游戏">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否在职</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="ishere" lay-filter="ishere"
+                       lay-skin="switch" lay-text="是|否">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button type="button" class="layui-btn" id="btn1">向select里面添加一个深圳</button>
+                <button type="button" class="layui-btn" id="btn2">初始化表单</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use([ 'element', 'jquery', 'layer', 'form' ], function() {
+        var $ = layui.jquery;
+        var element = layui.element;
+        var layer = layui.layer;
+        var form = layui.form;
+        //alert
+        $("#fbtn1").click(function() {
+            var x=layer.open({
+                type:0,  //设置类型 默认为0  1 页面层  2ifream层
+                title:"提示",  //标题
+                content:'你好吗?',//内容  type=0为内容
+                skin :'layui-layer-molv',//皮肤
+                /* area: '500px' */
+                area:['500px','300px'],//宽高
+                offset: 'auto',	 //offset默认情况下不用设置。但如果你不想垂直水平居中
+                icon:1    //只对type=0的效
+                , btn: ['按钮一', '按钮二', '按钮三']
+                ,yes: function(index, layero){
+                    //按钮【按钮一】的回调
+                    alert("按钮一");
+                    layer.close(index);
+                }
+                ,btn2: function(index, layero){
+                    //按钮【按钮二】的回调
+                    alert("按钮二")
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+                ,btn3: function(index, layero){
+                    //按钮【按钮三】的回调
+                    alert("按钮三")
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+                ,cancel: function(){
+                    //右上角关闭回调
+                    alert("cancel")
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+                ,btnAlign :'c'  //按钮的对齐方式
+                ,closeBtn : 1  //设置关闭按钮的样式  1  默认
+                ,shade: [0.8, '#FF0000']
+                ,shadeClose:true  //点击遮罩是否关闭弹层
+                ,anim: 4 //设置动画
+                ,maxmin :true //是否显示最大化和最小化的按钮 type=1 type=2有效
+                ,success:function(layero, index){
+                    alert(index+"  "+x);
+                }
+            })
+            alert(x);
+        });
+
+        //type=1
+        $("#fbtn2").click(function() {
+            layer.open({
+                type:1,  //设置类型 默认为0  1 页面层  2ifream层
+                title:"提示",  //标题
+                content:$("#mydiv"),//内容
+                skin :'layui-layer-molv',//皮肤
+                /* area: '500px' */
+                area:['800px','500px'],//宽高
+                offset: 'auto',	 //offset默认情况下不用设置。但如果你不想垂直水平居中
+                icon:1    //只对type=0的效
+                ,shadeClose:true  //点击遮罩是否关闭弹层
+                ,anim: 4 //设置动画
+                ,maxmin :true //是否显示最大化和最小化的按钮 type=1 type=2有效
+                ,success:function(layero, index){
+                    //alert(index);
+                }
+            })
+        });
+        //type=2
+        $("#btn3").click(function() {
+            layer.open({
+                type:2,  //设置类型 默认为0  1 页面层  2ifream层
+                title:"提示",  //标题
+                content:"18_form.jsp",//内容
+                skin :'layui-layer-molv',//皮肤
+                /* area: '500px' */
+                area:['500px','300px'],//宽高
+                offset: 'auto',	 //offset默认情况下不用设置。但如果你不想垂直水平居中
+                icon:1    //只对type=0的效
+                ,shadeClose:true  //点击遮罩是否关闭弹层
+                ,anim: 4 //设置动画
+                ,maxmin :true //是否显示最大化和最小化的按钮 type=1 type=2有效
+                ,success:function(layero, index){
+                    //alert(index);
+                }
+            })
+        });
+
+    });
+</script>
+</body>
+</html>

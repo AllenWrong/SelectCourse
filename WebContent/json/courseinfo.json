@@ -1,0 +1,38 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 101,
+	"data": [
+		{
+			"courID": "10001",
+			"courNum": "杜甫",
+			"courName": "xianxin@layui.com",
+			"courXs": "杜甫",
+			"courRedit": "xianxin@layui.com",
+			"courType": "杜甫",
+			"courTerm": "xianxin@layui.com",
+			"courXxkNum": "xianxin@layui.com"
+		},
+		{
+			"courID": "10001",
+			"courNum": "杜甫",
+			"courName": "xianxin@layui.com",
+			"courXs": "杜甫",
+			"courRedit": "xianxin@layui.com",
+			"courType": "杜甫",
+			"courTerm": "xianxin@layui.com",
+			"courXxkNum": "xianxin@layui.com"
+		},
+		{
+			"courID": "10001",
+			"courNum": "杜甫",
+			"courName": "xianxin@layui.com",
+			"courXs": "杜甫",
+			"courRedit": "xianxin@layui.com",
+			"courType": "杜甫",
+			"courTerm": "xianxin@layui.com",
+			"courXxkNum": "xianxin@layui.com"
+
+		}
+	]
+}  

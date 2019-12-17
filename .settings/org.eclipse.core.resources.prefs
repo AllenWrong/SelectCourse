@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebContent/json=UTF-8
+encoding//WebContent/json/courseinfo.json=UTF-8
+encoding//WebContent/json/images.json=UTF-8
+encoding//src/com/course/jdbc/DatabaseBackup.java=UTF-8
+encoding//src/com/course/jdbc/SingleDataBase.java=UTF-8
+encoding//src/com/course/service=GBK
+encoding//src/com/course/service/MngService.java=UTF-8
+encoding//src/com/course/service/StudentService.java=UTF-8
+encoding/src=UTF-8

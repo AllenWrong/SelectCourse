@@ -1,0 +1,171 @@
+<!--查询选课信息-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生选课信息查询</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css">
+</head>
+
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>学生选课信息查询</legend>
+</fieldset>
+
+<div class="layui-tab layui-tab-card">
+
+    <div class="layui-tab-content">
+
+        <div class="layui-tab-item layui-show">
+            <!--查询的form表单-->
+            <form action="" class="layui-form" method="post">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">学期：</label>
+                        <div class="layui-input-block">
+                            <select name="term" >
+                                <option value=""></option>
+                                <option value="0">1</option>
+                                <option value="1">2</option>
+                                <option value="2">3</option>
+                                <option value="3">4</option>
+                                <option value="4">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">学年：</label>
+                        <div class="layui-input-block">
+                            <select name="term" >
+                                <option value=""></option>
+                                <option value="0">2017-2018</option>
+                                <option value="1">2018-2019</option>
+                                <option value="2">2019-2020</option>
+                                <option value="3">2020-2021</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--对表格数据进行操作的几个按钮(确定选课/刷新数据)-->
+            <!--<div  id="userToolBar">-->
+                <!--<button type="button" class="layui-btn layui-btn-sm" lay-event="add">确定选课</button>-->
+                <!--<button type="button" class="layui-btn layui-btn-sm" lay-event="reloadTable">刷新数据</button>-->
+            <!--</div>-->
+            <!--数据表格-->
+            <table class="layui-table">
+                <colgroup>
+                </colgroup>
+                <thead>
+                <tr>
+                    <!--<th style="text-align: center" ><input type="checkbox"></th>-->
+                    <th style="text-align: center">序号</th>
+                    <th style="text-align: center">课程代码</th>
+                    <th style="text-align: center">课程名称</th>
+                    <th style="text-align: center">课程性质</th>
+                    <th style="text-align: center">是否选课</th>
+                    <th style="text-align: center">开课学院</th>
+                    <th style="text-align: center">学分</th>
+                    <!--<th style="text-align: center">限选人数</th>-->
+                    <th style="text-align: center">任课老师</th>
+                    <th style="text-align: center">上课时间</th>
+                    <th style="text-align: center">上课地点</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                    <!--<td><input type="checkbox"></td>-->
+                    <td>1</td>
+                    <td>10001</td>
+                    <td>Java语言程序设计</td>
+                    <td>必修课</td>
+                    <td>是</td>
+                    <td>信息科学与工程学院</td>
+                    <td>3</td>
+                    <!--<td>150</td>-->
+                    <td>李教授</td>
+                    <td>第一大节</td>
+                    <td>信工楼109</td>
+                </tr>
+                <tr align="center">
+                    <!--<td><input type="checkbox"></td>-->
+                    <td>3</td>
+                    <td>10004</td>
+                    <td>数据库原理</td>
+                    <td>必修课</td>
+                    <td>是</td>
+                    <td>信息科学与工程学院</td>
+                    <td>4</td>
+                    <!--<td>200</td>-->
+                    <td>李教授</td>
+                    <td>第一大节</td>
+                    <td>信工楼109</td>
+
+                </tr>
+                <tr align="center">
+                    <!--<td><input type="checkbox"></td>-->
+                    <td>5</td>
+                    <td>10006</td>
+                    <td>计算机组成原理</td>
+                    <td>必修课</td>
+                    <td>是</td>
+                    <td>信息科学与工程学院</td>
+                    <td>3</td>
+                    <!--<td>150</td>-->
+                    <td>李教授</td>
+                    <td>第一大节</td>
+                    <td>信工楼109</td>
+
+                </tr>
+                <tr align="center">
+                    <!--<td><input type="checkbox"></td>-->
+                    <td>6</td>
+                    <td>10007</td>
+                    <td>算法分析与设计</td>
+                    <td>限选课</td>
+                    <td>是</td>
+                    <td>信息科学与工程学院</td>
+                    <td>4</td>
+                    <!--<td>270</td>-->
+                    <td>李教授</td>
+                    <td>第一大节</td>
+                    <td>信工楼109</td>
+                </tr>
+                <tr align="center">
+                    <!--<td><input type="checkbox"></td>-->
+                    <td>8</td>
+                    <td>10009</td>
+                    <td>HTML5</td>
+                    <td>限选课</td>
+                    <td>是</td>
+                    <td>信息科学与工程学院</td>
+                    <td>3</td>
+                    <!--<td>230</td>-->
+                    <td>李教授</td>
+                    <td>第一大节</td>
+                    <td>信工楼109</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../../layui/layui.js"></script>
+<script>
+
+    layui.use(['element','form'],function(){
+        var element = layui.element;
+        var form = layui.form;
+
+    });
+</script>
+</body>
+</html>

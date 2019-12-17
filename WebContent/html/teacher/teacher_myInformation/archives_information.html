@@ -1,0 +1,71 @@
+<!--档案信息-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师档案信息</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css">
+</head>
+<style>
+    .myTableCell-one{
+        width:15% ;
+        background-color:#efefef;
+        text-align: center;
+    }
+    .myTableCell-two{
+        width:35% ;
+        text-align: left;
+        padding: 10px;
+
+    }
+
+
+</style>
+<body>
+
+
+    <fieldset class="layui-elem-field " style="margin-top: 50px;margin-left: 250px;margin-right: 250px;border-width: 1.3px">
+        <legend>档案信息</legend>
+        <div class="layui-tab layui-tab-card" style=" padding:20px 50px;margin-left: 100px;margin-right: 100px;margin-bottom: 50px" >
+            <table  class="layui-table">
+                <tr>
+                    <td class="myTableCell-one">姓名</td> <td class="myTableCell-two">小明</td>
+                    <td class="myTableCell-one">教职工号</td> <td class="myTableCell-two">20170001</td>
+                </tr>
+                <tr>
+                    <td class="myTableCell-one">性别</td> <td class="myTableCell-two">男</td>
+                    <td class="myTableCell-one">出生日期</td> <td class="myTableCell-two">1989-05-06</td>
+                </tr>
+
+                <tr>
+                    <td class="myTableCell-one">专业</td> <td class="myTableCell-two">计算机科学与技术</td>
+                    <td class="myTableCell-one">职称</td> <td class="myTableCell-two">教授</td>
+                </tr>
+
+                <tr>
+                    <td class="myTableCell-one">民族</td> <td class="myTableCell-two">汉族</td>
+                    <td class="myTableCell-one">政治面貌</td> <td class="myTableCell-two">中共党员</td>
+                </tr>
+
+                <tr>
+                    <td class="myTableCell-one">入职时间</td> <td class="myTableCell-two">2017</td>
+                    <td class="myTableCell-one">学历</td> <td class="myTableCell-two">博士</td>
+                </tr>
+
+                <tr>
+                    <td class="myTableCell-one">家庭住址</td> <td class="myTableCell-two">山东师范大学</td>
+                    <td class="myTableCell-one">学生电话</td> <td class="myTableCell-two">17861501234</td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+
+<script src="../../../layui/layui.js"></script>
+<script>
+    layui.use(['element','form'],function(){
+        var element = layui.element;
+        var form = layui.form;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!--论文专利-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css">
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>论文专利</legend>
+</fieldset>
+<div class="layui-tab layui-tab-card">
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+
+            <table class="layui-table">
+                <colgroup>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th style="text-align: center">序号</th>
+                    <th style="text-align: center">教职工号</th>
+                    <th style="text-align: center">著作发表时间</th>
+                    <th style="text-align: center">作者排名</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr align="center">
+                    <td>1</td>
+                    <td>30001</td>
+                    <td>2018.10.10</td>
+                    <td>第一作者</td>
+                </tr>
+                <tr align="center">
+                    <td>2</td>
+                    <td>30003</td>
+                    <td>2018.10.17</td>
+                    <td>第二作者</td>
+                </tr>
+                <tr align="center">
+                    <td>4</td>
+                    <td>30005</td>
+                    <td>2019.07.08</td>
+                    <td>第一作者</td>
+                </tr>
+                <tr align="center">
+                    <td>5</td>
+                    <td>30006</td>
+                    <td>2017.04.10</td>
+                    <td>第一作者</td>
+                </tr>
+                <tr align="center">
+                    <td>7</td>
+                    <td>30007</td>
+                    <td>2018.12.18</td>
+                    <td>第三作者</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../../../layui/layui.js"></script>
+<script>
+    layui.use(['element','form'],function(){
+        var element = layui.element;
+        var form = layui.form;
+    });
+</script>
+
+</body>
+</html>
